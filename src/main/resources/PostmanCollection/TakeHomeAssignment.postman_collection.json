@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "2cdf6511-d328-4cb1-a763-7a3c62bd1e1d",
+		"name": "TakeHomeAssignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "14221506"
+	},
+	"item": [
+		{
+			"name": "CUSTOMER API",
+			"item": [
+				{
+					"name": "SIGNUP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerName\": \"Alex\",\r\n    \"id\": \"1234\",\r\n    \"firstName\": \"Alex\",\r\n    \"lastName\": \"Marisha\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/auth/signup"
+					},
+					"response": []
+				},
+				{
+					"name": "SIGNIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"1234\",\r\n    \"pin\": \"9444\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/auth/signin"
+					},
+					"response": []
+				},
+				{
+					"name": "GET all customers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjM0IiwiaWF0IjoxNjU1NjE0NDI2LCJleHAiOjE2NTU3MDA4MjZ9.udWLSCio5aYffO5Nh2qI_sr86SFGYJ3nnYSZc1YSK9vF7Gdl3djISv2ZPA0JNn4837cec5jHl1anBDzgmxGW4Q"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/customers"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TRANSACTION API",
+			"item": [
+				{
+					"name": "GET all Transactions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1Njc4IiwiaWF0IjoxNjU1NjE1NzcwLCJleHAiOjE2NTU3MDIxNzB9.c9OIdIWawMHI2iJGOsGyRxyBFDzZcr0lTwq9eFfN7SPzNFleNz8apDhe065qa7k7SjbuLtYUJVtwchwZx4ylDA"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/transactions/list"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Mini statement",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjM0IiwiaWF0IjoxNjU1NjE3MDk3LCJleHAiOjE2NTU3MDM0OTd9.QYUYNFFSnUwWeBGpUnAY9kLBlJrYAll8h5iUceQvd9P68NX-D-mBv15tU8VMG-TfQWz7JpEeUmg_W__w7bcmgg"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/transactions?accountNumber=988413",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "accountNumber",
+									"value": "988413"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjM0IiwiaWF0IjoxNjU1NjE3MDk3LCJleHAiOjE2NTU3MDM0OTd9.QYUYNFFSnUwWeBGpUnAY9kLBlJrYAll8h5iUceQvd9P68NX-D-mBv15tU8VMG-TfQWz7JpEeUmg_W__w7bcmgg"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/transactions/query?transactionCode=MJW-511658",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"query"
+							],
+							"query": [
+								{
+									"key": "transactionCode",
+									"value": "MJW-511658"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ACCOUNT API",
+			"item": [
+				{
+					"name": "GET balance",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1Njc4IiwiaWF0IjoxNjU1NjE1NzcwLCJleHAiOjE2NTU3MDIxNzB9.c9OIdIWawMHI2iJGOsGyRxyBFDzZcr0lTwq9eFfN7SPzNFleNz8apDhe065qa7k7SjbuLtYUJVtwchwZx4ylDA"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/accounts/balance?customerId=1234",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"accounts",
+								"balance"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "1234"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREDIT account",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjM0IiwiaWF0IjoxNjU1NjE3MDk3LCJleHAiOjE2NTU3MDM0OTd9.QYUYNFFSnUwWeBGpUnAY9kLBlJrYAll8h5iUceQvd9P68NX-D-mBv15tU8VMG-TfQWz7JpEeUmg_W__w7bcmgg"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accountNumber\": \"988413\",\r\n    \"amount\": 345\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/accounts/deposit"
+					},
+					"response": []
+				},
+				{
+					"name": "FundTransfer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjM0IiwiaWF0IjoxNjU1NjE0NDI2LCJleHAiOjE2NTU3MDA4MjZ9.udWLSCio5aYffO5Nh2qI_sr86SFGYJ3nnYSZc1YSK9vF7Gdl3djISv2ZPA0JNn4837cec5jHl1anBDzgmxGW4Q"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"debitAccount\": \"265587\",\r\n    \"creditAccount\": \"530975\",\r\n    \"amount\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/accounts/fundTransfer"
+					},
+					"response": []
+				},
+				{
+					"name": "GET All accounts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjM0IiwiaWF0IjoxNjU1NjE3MDk3LCJleHAiOjE2NTU3MDM0OTd9.QYUYNFFSnUwWeBGpUnAY9kLBlJrYAll8h5iUceQvd9P68NX-D-mBv15tU8VMG-TfQWz7JpEeUmg_W__w7bcmgg"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/accounts"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
